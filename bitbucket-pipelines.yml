@@ -1,0 +1,8 @@
+image: wagnerstephan/bitbucket-git-ftp:latest
+
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - git ftp push -u "$ftp_user" -p "$ftp_pass" ftps://$ftp_host
